@@ -39,29 +39,18 @@ void dijkstra(float graph[12][12], int source, string stations[12])
                 distance[k] = distance[m] + graph[m][k];
         }
     }
-    // cout << "\n\n\nMinimum Number of Stations from "
-    //      << "[" << stations[source] << "]"
-    //      << " To every station\n\n\n"
-    //      << endl;
+
     int n;
-    cout<<endl<<endl;
+    cout << endl
+         << endl;
     cout << "Enter the station code of destination:";
     cin >> n;
-    // for (int k = 0; k < 12; k++)
-    // {
-    //         if(k==source)
-    //         continue;
 
-    //     cout << "Enter"
-    //          << " " << k << " "
-    //          << "To Check Distance Between " << stations[source] << " To "
-    //          << "[" << stations[k] << "]"
-    //          << " "
-    //          << "Station" << endl;
-    // }
-    cout<<endl<<endl;
-    cout << "\t\t----------------Total Distance from source to destination----------------"<<endl<<endl;
-    cout<<"\t\t"<<stations[source]<<" <------------> "<<stations[n]<<" = "<<distance[n]<<" km"<<endl;
+    cout << endl
+         << endl;
+    cout << "\t\t----------------Total Distance from source to destination----------------" << endl
+         << endl;
+    cout << "\t\t" << stations[source] << " <------------> " << stations[n] << " = " << distance[n] << " km" << endl;
 }
 
 int login()
@@ -92,34 +81,33 @@ int login()
         if (strcmp(u_name, name) == 0 && strcmp(pwd, g_pwd) == 0)
         {
             flag = 1;
-           cout<<"\t\t\t You have successfully logged in !"<<endl;
+            cout << "\t\t\t You have successfully logged in !" << endl;
             break;
         }
         else if (strcmp(u_name, name) == 0 && strcmp(pwd, g_pwd) != 0)
         {
             do
             {
-              
-                cout<<"----INCORRECT PASSWORD!----"<<endl;
+
+                cout << "----INCORRECT PASSWORD!----" << endl;
                 cout << "Re-Enter the PASSWORD : " << endl;
 
                 cin >> pwd;
             } while (strcmp(pwd, g_pwd) != 0);
 
-            
-            cout<<"\t\t\t You have successfully logged in !"<<endl;
+            cout << "\t\t\t You have successfully logged in !" << endl;
             flag = 1;
             break;
         }
     }
     if (flag == 0)
-        cout << "\n\t\t\tSORRY!!! USER NAME does not Exist, please REGISTER yourself first !" << endl<<endl;
+        cout << "\n\t\t\tSORRY!!! USER NAME does not Exist, please REGISTER yourself first !" << endl
+             << endl;
     Sleep(2000);
     system("CLS");
     f.close();
     return flag;
 }
-
 
 void signup()
 {
@@ -133,7 +121,7 @@ void signup()
     int flag;
     cout << "Enter the USER NAME : ";
     string phrase = "Enter your USER NAME And PASSWORD: ";
-  
+
     cin >> name;
     do
     {
@@ -182,7 +170,7 @@ void signup()
         Sleep(500);
     }
     cout << "\n\n\t\t\t\t\t\aCONGRATULATION!!!YOUR ID CREATED SUCCESSFULL....Please wait";
-    Sleep(5000);
+    Sleep(3000);
     system("CLS");
     f.close();
 }
@@ -206,8 +194,10 @@ int main()
     int source;
     int n, W, ch, flag;
     char s;
-    cout<<"\n\n\n";
-     cout<<"\t\t\t-----------------------------------WELLCOME TO MY PROJECT-----------------------------------"<<endl<<endl;;
+    cout << "\n\n\n";
+    cout << "\t\t\t-----------------------------------WELLCOME TO MY PROJECT-----------------------------------" << endl
+         << endl;
+    ;
     do
     {
         cout << endl;
@@ -234,14 +224,14 @@ int main()
                 flag = login();
             else
             {
-                cout<<"\n\n\n";
-               cout<<"\t\t\t-------------------------------Thank you have a nice day !-------------------------------\t\t\t"<<endl;
+                cout << "\n\n\n";
+                cout << "\t\t\t-------------------------------Thank you have a nice day !-------------------------------\t\t\t" << endl;
                 exit(1);
             }
             break;
         case 3:
-            cout<<"\n\n\n";
-            cout<<"\t\t\t-------------------------------Thank you have a nice day !-------------------------------\t\t\t"<<endl;
+            cout << "\n\n\n";
+            cout << "\t\t\t-------------------------------Thank you have a nice day !-------------------------------\t\t\t" << endl;
             exit(0);
             break;
         default:
@@ -254,21 +244,24 @@ int main()
         string stations[12] = {"Chembur", "Kurla", "Dadar", "Bandra", "Borevali", "Virar", "Kalyan", "Thane", "Vashi", "CST", "ChurchGate", "Panvel"};
         char x;
 
-       
         do
         {
-            cout << "\t\t\t-------------------------------Mumbai Local Minimum Distance Calculator-------------------------------\t\t\t\n\n"<<endl<<endl;
-            cout<<"Select the Source station"<<endl<<endl;
+            cout << "\t\t\t-------------------------------Mumbai Local Minimum Distance Calculator-------------------------------\t\t\t\n\n"
+                 << endl
+                 << endl;
+            cout << "Select the Source station" << endl
+                 << endl;
             for (int i = 0; i < 12; i++)
             {
                 cout << "Enter "
                      << " " << i << " "
                      << " for " << stations[i] << endl;
             }
-                
-            cout << endl<<"Enter the code for source station:";
+
+            cout << endl
+                 << "Enter the code for source station:";
             cin >> source;
-            // system("cls");
+
             dijkstra(graph, source, stations);
 
             cout << "\n\nDo you want to continue (Y/N)? : ";
@@ -276,8 +269,8 @@ int main()
             cin >> x;
             system("cls");
         } while (x == 'y' || x == 'Y');
-        cout<<"\n\n\n";
-        cout<<"\t\t\t-------------------------------Thank you have a nice day !-------------------------------\t\t\t"<<endl;
+        cout << "\n\n\n";
+        cout << "\t\t\t-------------------------------Thank you have a nice day !-------------------------------\t\t\t" << endl;
         Sleep(2000);
         return 0;
     }

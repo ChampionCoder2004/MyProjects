@@ -1,2 +1,1 @@
-# MyProjects
-This has some of the projects that I made.
+This has some projects that I made....

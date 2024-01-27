@@ -58,13 +58,13 @@ int main()
     do
     {
         cout << endl;
-        cout << "\t\t\t\t\t\t\t \t\t\t\t\t_____________________\n";
-        cout << "\t\t\t\t\t\t\t \t\t\t\t\t\xdb\xdb\xdb\xdb\xdb\xdb_____________\xdb\xdb\xdb\xdb\xdb\xdb \n";
-        cout << "\t\t\t\t\t\t\t \t\t\t\t\t\xdb\xdb\xdb\xdb\xdb\xdb 1) LOGIN    \xdb\xdb\xdb\xdb\xdb\xdb\n";
-        cout << "\t\t\t\t\t\t\t \t\t\t\t\t\xdb\xdb\xdb\xdb\xdb\xdb 2) REGISTER \xdb\xdb\xdb\xdb\xdb\xdb\n";
-        cout << "\t\t\t\t\t\t\t\t\t\t\t\t\xdb\xdb\xdb\xdb\xdb\xdb 3) EXIT     \xdb\xdb\xdb\xdb\xdb\xdb\n";
-        cout << "\t\t\t\t\t\t\t \t\t\t\t\t\xdb\xdb\xdb\xdb\xdb\xdb_____________\xdb\xdb\xdb\xdb\xdb\xdb\n";
-        cout << "\t\t\t\t\t\t\t \t\t\t\t\t\xdb\xdb\xdb\xdb\xdb\xdb_____________\xdb\xdb\xdb\xdb\xdb\xdb\n";
+        cout << endl;
+        cout << "\t\t\t\t====================\n";
+        cout << "\t\t\t\t|| 1) LOGIN      ||\n";
+        cout << "\t\t\t\t|| 2) REGISTER   ||\n";
+        cout << "\t\t\t\t|| 3) EXIT       ||\n";
+        cout << "\t\t\t\t====================\n";
+
         cout << "Enter your Choice : ";
         cin >> ch;
         system("cls");
@@ -125,7 +125,7 @@ void dijkstra(vector<vector<pair<float, float>>> &map, int source, string statio
         int st = pq.top().second;
         pq.pop();
 
-        for (auto itr : map[st])
+        for (pair<int, int> itr : map[st])
         {
 
             int w = itr.second;
@@ -205,9 +205,9 @@ int login()
 {
     char dum, u_name[30], name[30], g_pwd[30], pwd[30];
     int flag = 0, s = 1;
-    cout << "\n\n\n\n\n\n\t\t\t\t\t  \xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb" << endl;
-    cout << "\t\t\t\t\t\t*WELLCOME TO LOGIN*" << endl;
-    cout << "\t\t\t\t\t  \xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb " << endl;
+    cout << "\n\n\n\n\n\n\t\t\t\t\t======================" << endl;
+    cout << "\t\t\t\t\t  WELCOME TO LOGIN " << endl;
+    cout << "\t\t\t\t\t======================" << endl;
     if (s == 1)
     {
 
@@ -268,9 +268,10 @@ int login()
 
 void signup()
 {
-    cout << "\n\n\n\n\n\n\t\t\t\t\t  \xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb " << endl;
-    cout << "\t\t\t\t\t\t*WELLCOME TO SIGNUP*" << endl;
-    cout << "\t\t\t\t\t  \xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb\xdb " << endl;
+    cout << "\n\n\n\n\n\n\t\t\t";
+    cout << "\n\n\n\n\n\n\t\t\t\t\t======================" << endl;
+    cout << "\t\t\t\t\t  WELCOME TO SIGNUP " << endl;
+    cout << "\t\t\t\t\t======================" << endl;
     char name[30], pwd[30], check_pwd[30];
     fstream f;
     f.open("user_logins.txt", ios::in);
